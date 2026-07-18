@@ -1,0 +1,77 @@
+.reader {
+  background: var(--r-bg); color: var(--r-fg);
+  min-height: calc(100dvh - 60px);
+  margin: -16px; padding: 16px;
+  padding-bottom: calc(120px + env(safe-area-inset-bottom));
+  transition: background .25s, color .25s;
+}
+.reader-toolbar {
+  position: sticky; top: 60px; z-index: 20;
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 10px; margin: -8px -8px 18px;
+  background: color-mix(in srgb, var(--r-bg) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--r-border);
+  border-radius: 12px 12px 0 0;
+}
+.reader-toolbar .rt-title {
+  flex: 1; font-weight: 600; font-size: .95rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.reader-toolbar .icon-btn { width: 36px; height: 36px; border-radius: 8px; }
+.reader-toolbar .icon-btn.active { background: var(--r-accent); color: var(--r-bg); }
+
+.reader-progress {
+  text-align: center; font-size: .78rem;
+  color: var(--r-dim); margin: 4px 0 18px;
+  letter-spacing: 1px;
+}
+.reader-meta {
+  text-align: center; padding: 10px 0 22px;
+  border-bottom: 1px solid var(--r-border);
+  margin-bottom: 22px;
+}
+.reader-meta .rm-label {
+  font-size: .75rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--r-dim);
+}
+.reader-meta h2 { margin: 8px 0 0; font-size: 1.4rem; }
+
+.reader-body {
+  font-size: var(--r-fs, 1.05rem);
+  line-height: var(--r-lh, 1.85);
+  letter-spacing: .1px;
+}
+.reader-body p { margin: 0 0 1em; text-align: justify; hyphens: auto; }
+.reader-body .clause { margin: .6em 0; padding-left: 1em; border-left: 2px solid var(--r-border); }
+.reader-body .clause-num { color: var(--r-accent); font-weight: 600; margin-right: .4em; }
+
+.reader-nav {
+  display: flex; gap: 10px; margin-top: 32px;
+  padding-top: 20px; border-top: 1px solid var(--r-border);
+}
+.reader-nav button {
+  flex: 1; padding: 12px 14px;
+  background: var(--r-bg); color: var(--r-fg);
+  border: 1px solid var(--r-border); border-radius: 10px;
+  font-weight: 500;
+  transition: border-color .15s, background .15s;
+}
+.reader-nav button:hover:not(:disabled) { border-color: var(--r-accent); }
+.reader-nav button:disabled { opacity: .4; cursor: not-allowed; }
+
+.reader-actions {
+  display: flex; justify-content: center; gap: 10px;
+  margin-top: 24px;
+}
+.reader-actions button {
+  padding: 10px 18px; border-radius: 10px;
+  background: var(--r-accent); color: var(--r-bg);
+  font-weight: 600; font-size: .9rem;
+}
+
+/* Preamble special */
+.preamble-emblem { text-align: center; padding: 20px 0 10px; }
+.preamble-emblem svg { width: 90px; height: 90px; color: var(--r-accent); margin: 0 auto; }
+.preamble-text { font-size: 1.1rem; line-height: 2; text-align: center; font-style: italic; }
+.preamble-text p { margin: 0 0 1em; }
